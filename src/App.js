@@ -1,8 +1,14 @@
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+
 function App() {
   return (
-    <>
-      <div className="display-4 text-center">Shaw Blog</div>
-    </>
+    <div className="App">
+      <Navbar />
+      <div className="content">
+        <Home />
+      </div>
+    </div>
   );
 }
 
