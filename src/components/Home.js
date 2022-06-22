@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BlogList from "./BlogList";
 
 const Home = () => {
     const [blogs, setBlogs] = useState([
@@ -9,14 +10,7 @@ const Home = () => {
 
     return ( 
         <div className="home">
-            {/* Since we want to list through all elements in the blog array, and return or add a DOM node in the page. We'll using map() method and returns jsx format for each element */}
-
-            {blogs.map((blog) => (
-                <div className="blog-preview" key={blog.id}>
-                    <h2>{ blog.title }</h2>
-                    <p>written by { blog.author }</p>
-                </div>
-            ))}
+            <BlogList title="All Blogs!" blogArray={ blogs }/>
         </div>
      );
 }
