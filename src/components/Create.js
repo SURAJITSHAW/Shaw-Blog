@@ -1,17 +1,30 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const Create = () => {
     // Had to put form input elements inside a state to keep track / store them
-    const [authorName, setAuthorName] = useState('')
+    const [author, setAuthor] = useState('')
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
+    const [isPending, setIsPending] = useState(false)
+    const history = useHistory()
 
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const blog = { authorName, title, body } 
+        const blog = { author, title, body } 
 
-        console.log(blog);
+        setIsPending(true)
+
+        fetch('http://localhost:8000/blogs', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json"},
+            body: JSON.stringify(blog)
+        }).then( () => {
+            console.log('New Blog added');
+            setIsPending(false)
+            history.push('/')
+        })
     }
 
     return ( 
@@ -21,7 +34,7 @@ const Create = () => {
                 <label>
                     Author Name :
                 </label>
-                <input required value={ authorName } onChange={ (e) => setAuthorName(e.target.value)} type="text" />
+                <input required value={ author } onChange={ (e) => setAuthor(e.target.value)} type="text" />
                 <label>
                     Title :
                 </label>
@@ -30,7 +43,8 @@ const Create = () => {
                     Body :
                 </label>
                 <textarea required value={ body } onChange={ (e) => setBody(e.target.value)}></textarea>
-                <button>Add Blog</button>
+                {!isPending && <button>Add Blog</button>}
+                {isPending && <button disabled>Adding Your Blog...☕</button>}
             </form>
         </div>
      );
