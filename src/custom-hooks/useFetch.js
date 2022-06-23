@@ -7,8 +7,9 @@ const UseFetch = (url) => {
 
     // Calling the useEffect hook only once to fetch the data
     useEffect(() => {
-      
-        fetch(url)
+      const abortCont = new AbortController();
+
+        fetch(url, { signal: abortCont.signal})
             .then(res => {
                 if (!res.ok) {
                     throw Error("Can't fetch the data. Server is down :(")
@@ -18,13 +19,21 @@ const UseFetch = (url) => {
             })
             .then(data => {
                 setData(data)
-                setError(null)
                 setIsPending(false)
+                setError(null)
             })
             .catch(err => {
-                setError(err.message)
-                setIsPending(false)
+                console.log(err);
+                if (err.name === 'AbortError') {
+                    console.log("fetch aborted!");
+                } else {
+
+                    setIsPending(false)
+                    setError(err.message)
+                }
             })
+
+        return () => abortCont.abort()
 
     }, [url])
 
