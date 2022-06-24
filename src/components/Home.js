@@ -2,7 +2,7 @@ import UseFetch from "../custom-hooks/useFetch";
 import BlogList from "./BlogList";
 
 const Home = () => {
-    const { data: blogs, isPending, error } = UseFetch('https://my-json-server.typicode.com/SURAJITSHAW/dataJson/blogs/')
+    const { data: blogs, isPending, error } = UseFetch('https://db-for-blog-project.herokuapp.com/blogs')
     
     return ( 
         <div className="home">
