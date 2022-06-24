@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Shaw-Blog/static/css/main.f1302bb2.css",
-    "main.js": "/Shaw-Blog/static/js/main.03b5ae45.js",
+    "main.js": "/Shaw-Blog/static/js/main.4a6618aa.js",
     "index.html": "/Shaw-Blog/index.html",
     "main.f1302bb2.css.map": "/Shaw-Blog/static/css/main.f1302bb2.css.map",
-    "main.03b5ae45.js.map": "/Shaw-Blog/static/js/main.03b5ae45.js.map"
+    "main.4a6618aa.js.map": "/Shaw-Blog/static/js/main.4a6618aa.js.map"
   },
   "entrypoints": [
     "static/css/main.f1302bb2.css",
-    "static/js/main.03b5ae45.js"
+    "static/js/main.4a6618aa.js"
   ]
 }
