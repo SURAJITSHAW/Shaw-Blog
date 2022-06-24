@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Create from "./components/Create";
 import BlogDetails from "./components/BlogDetails";
 import NotFound from "./components/NotFound";
@@ -13,9 +13,6 @@ function App() {
         <div className="content">
           <Switch>
             <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/Shaw-Blog">
               <Home />
             </Route>
             <Route path="/create">
