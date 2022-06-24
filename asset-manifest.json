@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Shaw-Blog/static/css/main.f1302bb2.css",
+    "main.js": "/Shaw-Blog/static/js/main.c19d3af6.js",
+    "index.html": "/Shaw-Blog/index.html",
+    "main.f1302bb2.css.map": "/Shaw-Blog/static/css/main.f1302bb2.css.map",
+    "main.c19d3af6.js.map": "/Shaw-Blog/static/js/main.c19d3af6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f1302bb2.css",
+    "static/js/main.c19d3af6.js"
+  ]
+}
