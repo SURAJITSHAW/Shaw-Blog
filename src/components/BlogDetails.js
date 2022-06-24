@@ -4,11 +4,11 @@ import UseFetch from "../custom-hooks/useFetch";
 const BlogDetails = () => {
     // Getting the route parameter with the help of a built-in hook
     const { id } = useParams()
-    const { data: blogs, isPending, error } = UseFetch('https://my-json-server.typicode.com/SURAJITSHAW/dataJson/db' + id)
+    const { data: blogs, isPending, error } = UseFetch('https://my-json-server.typicode.com/SURAJITSHAW/dataJson/blogs/' + id)
     const history = useHistory()
 
     const handleClick = () => {
-        fetch('https://my-json-server.typicode.com/SURAJITSHAW/dataJson/db' + id, {
+        fetch('https://my-json-server.typicode.com/SURAJITSHAW/dataJson/blogs/' + id, {
             method: 'delete'
         }).then(() => history.push('/'))
     }

@@ -2,7 +2,7 @@ import UseFetch from "../custom-hooks/useFetch";
 import BlogList from "./BlogList";
 
 const Home = () => {
-    const { data: blogs, isPending, error } = UseFetch('https://my-json-server.typicode.com/SURAJITSHAW/dataJson/db')
+    const { data: blogs, isPending, error } = UseFetch('https://my-json-server.typicode.com/SURAJITSHAW/dataJson/blogs/')
     
     return ( 
         <div className="home">
