@@ -4,11 +4,11 @@ import UseFetch from "../custom-hooks/useFetch";
 const BlogDetails = () => {
     // Getting the route parameter with the help of a built-in hook
     const { id } = useParams()
-    const { data: blogs, isPending, error } = UseFetch('https://db-for-blog-project.herokuapp.com/blogs' + id)
+    const { data: blogs, isPending, error } = UseFetch('https://db-for-blog-project.herokuapp.com/blogs/' + id)
     const history = useHistory()
 
     const handleClick = () => {
-        fetch('https://db-for-blog-project.herokuapp.com/blogs' + id, {
+        fetch('https://db-for-blog-project.herokuapp.com/blogs/' + id, {
             method: 'delete'
         }).then(() => history.push('/'))
     }
